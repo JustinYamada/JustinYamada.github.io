@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Justin Yamada</title>
+  <meta name="description" content="Justin Yamada — software engineer moving into strategy. Kellogg MBAi, Class of 2028.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2326386b'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' text-anchor='middle' fill='%23f6f1e7'%3EJY%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Justin Yamada, home">JY</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#path">Path</a>
+      <a href="#work">Work</a>
+      <a class="nav-play" href="#play">Play Snake</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <p class="eyebrow">Kellogg MBAi · Class of 2028</p>
+      <h1>Justin Yamada</h1>
+      <p class="lede">Software engineer moving into strategy, where technology meets business.</p>
+      <ul class="facts">
+        <li><strong>4 years</strong><span>Software engineering at Fujitsu, Japan</span></li>
+        <li><strong>EN | JP</strong><span>Bilingual; raised in Hawaii in a Japanese-speaking home</span></li>
+        <li><strong>10,000+</strong><span>Supply chain operations covered by a visibility layer I helped build</span></li>
+      </ul>
+      <div class="cta">
+        <a class="btn btn-primary" href="#play">Play Snake</a>
+        <a class="btn" href="https://github.com/JustinYamada" rel="me noopener">GitHub</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>What I’m pursuing</h3>
+          <p>Strategy consulting, especially digital and AI-driven transformation work. Also exploring tech product management roles.</p>
+        </div>
+        <div class="card">
+          <h3>What I bring</h3>
+          <p>An engineer’s sense of how technology actually gets built and shipped, plus fluency across U.S. and Japanese business culture.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="path">
+      <h2>My path</h2>
+      <ol class="timeline">
+        <li>
+          <span class="when">Early years</span>
+          <h3>Hawaii</h3>
+          <p>Bilingual home, U.S. and Japanese culture.</p>
+        </li>
+        <li>
+          <span class="when">2017–21</span>
+          <h3>Carleton College</h3>
+          <p>B.A., Computer Science.</p>
+        </li>
+        <li>
+          <span class="when">2022–26</span>
+          <h3>Fujitsu, Japan</h3>
+          <p>Software Engineer, AI Data Analytics Team.</p>
+        </li>
+        <li>
+          <span class="when">2026–28</span>
+          <h3>Kellogg MBAi</h3>
+          <p>Joint Kellogg + McCormick degree at Northwestern.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="work">
+      <h2>Work</h2>
+      <div class="card">
+        <p class="role">Software Engineer · Fujitsu Limited · Kawasaki, Japan</p>
+        <ul class="bullets">
+          <li>Four years as a software engineer in Japan, bridging Japan-based product leads and India-based engineering teams.</li>
+          <li>Built a Palantir-based supply chain visibility layer covering 10,000+ operations ($1B+).</li>
+          <li>Built a risk framework scoring 10,000+ suppliers.</li>
+        </ul>
+      </div>
+      <h3 class="sub">Off the clock</h3>
+      <ul class="chips">
+        <li>Bouldering (V2–V3)</li>
+        <li>Snowboarding</li>
+        <li>Board games</li>
+        <li>Cooking</li>
+      </ul>
+    </section>
+
+    <section id="play">
+      <h2>Snake</h2>
+      <p class="hint">Arrow keys or WASD to steer, space to pause. On a phone, swipe on the board or use the pad.</p>
+      <div class="game">
+        <div class="scorebar">
+          <span>Score <b id="score" aria-live="polite">0</b></span>
+          <span>Best <b id="best">0</b></span>
+        </div>
+        <div class="board">
+          <canvas id="snake-canvas" tabindex="0" aria-label="Snake game board"></canvas>
+          <div class="overlay" id="overlay">
+            <p id="overlay-msg">Ready?</p>
+            <button class="btn btn-primary" id="overlay-btn" type="button">Play</button>
+          </div>
+        </div>
+        <div class="dpad" aria-label="Direction pad">
+          <button type="button" data-dir="up" aria-label="Up">▲</button>
+          <button type="button" data-dir="left" aria-label="Left">◀</button>
+          <button type="button" data-dir="down" aria-label="Down">▼</button>
+          <button type="button" data-dir="right" aria-label="Right">▶</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year">2026</span> Justin Yamada · <a href="https://github.com/JustinYamada" rel="me noopener">github.com/JustinYamada</a></p>
+  </footer>
+
+  <script src="snake.js"></script>
+</body>
+</html>
