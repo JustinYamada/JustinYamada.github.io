@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thank-You Email Editor · Justin Yamada</title>
+  <meta name="description" content="Paste a thank-you email, who it is for, and the background. Get back a draft that reads naturally in a professional tone. Drafts only; it never sends.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2326386b'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' text-anchor='middle' fill='%23f6f1e7'%3EJY%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Justin Yamada, home">JY</a>
+    <nav aria-label="Sections">
+      <a href="index.html#about">About</a>
+      <a href="index.html#path">Path</a>
+      <a href="index.html#work">Work</a>
+      <a class="nav-current" href="editor.html" aria-current="page">Email Editor</a>
+      <a class="nav-play" href="index.html#play">Play Snake</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="editor-page" id="top">
+      <p class="eyebrow">Drafts only · never sends</p>
+      <h2>Thank-You Email Editor</h2>
+      <p class="hint">Paste your email, say who it is for, and add the background. You get back a draft that reads naturally in a professional tone. Copy it and send it yourself.</p>
+
+      <div class="editor-grid">
+        <form id="editor-form" class="editor-form" novalidate>
+          <div class="field">
+            <label for="recipient">Who it is going to</label>
+            <input type="text" id="recipient" autocomplete="off" placeholder="Dana Whitfield, Hiring Manager at Northline Logistics">
+            <p class="field-hint">Name, plus their role or how you know them.</p>
+          </div>
+
+          <div class="field">
+            <label for="details">Details behind the message</label>
+            <textarea id="details" rows="4" placeholder="Interviewed Thursday for the Operations Analyst role. We talked about the dashboard project. I can start in November."></textarea>
+            <p class="field-hint">What you are thanking them for, and anything the email should mention.</p>
+          </div>
+
+          <div class="field">
+            <label for="email">Your email text</label>
+            <textarea id="email" rows="8" placeholder="hi dana, thanks so much for meeting with me thursday..."></textarea>
+          </div>
+
+          <div class="field key-field">
+            <label for="api-key">Anthropic API key</label>
+            <input type="password" id="api-key" autocomplete="off" spellcheck="false" placeholder="sk-ant-...">
+            <p class="field-hint">This page has no server, so the edit runs on your own key. It goes from your browser straight to Anthropic and nowhere else. Get one at <a href="https://console.anthropic.com/settings/keys" rel="noopener">console.anthropic.com</a>.</p>
+            <label class="check"><input type="checkbox" id="remember-key"> Remember the key in this browser</label>
+          </div>
+
+          <div class="editor-actions">
+            <button type="submit" class="btn btn-primary" id="edit-btn">Edit email</button>
+            <button type="button" class="btn" id="stop-btn" hidden>Stop</button>
+            <button type="button" class="btn" id="clear-btn">Clear</button>
+          </div>
+        </form>
+
+        <div class="editor-result">
+          <div class="result-head">
+            <h3 id="result-title">Edited draft</h3>
+            <button type="button" class="btn btn-small" id="copy-btn">Copy draft</button>
+          </div>
+          <textarea id="draft" aria-labelledby="result-title" spellcheck="true" placeholder="Your edited draft appears here, starting with a subject line. You can keep editing it before you copy it."></textarea>
+          <p id="status" class="status" role="status" aria-live="polite">Nothing is sent from this page.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Justin Yamada · <a href="https://github.com/JustinYamada" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/in/justin-yamada/" rel="me noopener">LinkedIn</a></p>
+  </footer>
+
+  <script src="editor.js"></script>
+</body>
+</html>
